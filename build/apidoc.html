@@ -1,0 +1,1117 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/greim/await.js#readme"
+
+    >await (v0.2.6)</a>
+</h1>
+<h4>Set-theoretical promises</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.await">module await</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.await.await">
+            function <span class="apidocSignatureSpan"></span>await
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.await.all">
+            function <span class="apidocSignatureSpan">await.</span>all
+            <span class="apidocSignatureSpan">(list)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">await.</span>await.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.await.await">module await.await</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.await.await.await">
+            function <span class="apidocSignatureSpan">await.</span>await
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.await.await.all">
+            function <span class="apidocSignatureSpan">await.await.</span>all
+            <span class="apidocSignatureSpan">(list)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.await.await.prototype">module await.await.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.await.await.prototype._buildState">
+            function <span class="apidocSignatureSpan">await.await.prototype.</span>_buildState
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.await.await.prototype._on">
+            function <span class="apidocSignatureSpan">await.await.prototype.</span>_on
+            <span class="apidocSignatureSpan">(event, cb, ctx)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.await.await.prototype.catch">
+            function <span class="apidocSignatureSpan">await.await.prototype.</span>catch
+            <span class="apidocSignatureSpan">(onRejected)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.await.await.prototype.fail">
+            function <span class="apidocSignatureSpan">await.await.prototype.</span>fail
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.await.await.prototype.failer">
+            function <span class="apidocSignatureSpan">await.await.prototype.</span>failer
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.await.await.prototype.keep">
+            function <span class="apidocSignatureSpan">await.await.prototype.</span>keep
+            <span class="apidocSignatureSpan">(name, data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.await.await.prototype.map">
+            function <span class="apidocSignatureSpan">await.await.prototype.</span>map
+            <span class="apidocSignatureSpan">(map)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.await.await.prototype.nodify">
+            function <span class="apidocSignatureSpan">await.await.prototype.</span>nodify
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.await.await.prototype.onfail">
+            function <span class="apidocSignatureSpan">await.await.prototype.</span>onfail
+            <span class="apidocSignatureSpan">(cb, ctx)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.await.await.prototype.onkeep">
+            function <span class="apidocSignatureSpan">await.await.prototype.</span>onkeep
+            <span class="apidocSignatureSpan">(cb, ctx)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.await.await.prototype.onprogress">
+            function <span class="apidocSignatureSpan">await.await.prototype.</span>onprogress
+            <span class="apidocSignatureSpan">(cb, ctx)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.await.await.prototype.onresolve">
+            function <span class="apidocSignatureSpan">await.await.prototype.</span>onresolve
+            <span class="apidocSignatureSpan">(cb, ctx)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.await.await.prototype.progress">
+            function <span class="apidocSignatureSpan">await.await.prototype.</span>progress
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.await.await.prototype.run">
+            function <span class="apidocSignatureSpan">await.await.prototype.</span>run
+            <span class="apidocSignatureSpan">(cb, ctx)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.await.await.prototype.take">
+            function <span class="apidocSignatureSpan">await.await.prototype.</span>take
+            <span class="apidocSignatureSpan">(p2, map)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.await.await.prototype.then">
+            function <span class="apidocSignatureSpan">await.await.prototype.</span>then
+            <span class="apidocSignatureSpan">(onFulfilled, onRejected, onProgress)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.await" id="apidoc.module.await">module await</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.await.await" id="apidoc.element.await.await">
+        function <span class="apidocSignatureSpan"></span>await
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">await = function (){
+  var prom = new Promise();
+  prom._buildState.apply(prom, arguments);
+  return prom;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.await.all" id="apidoc.element.await.all">
+        function <span class="apidocSignatureSpan">await.</span>all
+        <span class="apidocSignatureSpan">(list)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">all = function (list) {
+  if (!list || list.length === 0) {
+    return _await(&#x27;length&#x27;).keep(&#x27;length&#x27;,0);
+  }
+  var keys = list.map(function(prom, idx){
+    return idx;
+  });
+  keys.push(&#x27;length&#x27;);
+  return _await.apply(this, keys).run(function(allProm){
+    allProm.keep(&#x27;length&#x27;, list.length);
+    list.forEach(function(prom, idx){
+      prom.onfail(allProm.failer());
+      prom.onkeep(function(got){
+        allProm.keep(idx, got);
+      });
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+p3.onkeep(function(got){
+  // do something with got.m1
+  // do something with got.m2
+})
+```
+
+## `await.<span class="apidocCodeKeywordSpan">all</span>(list)`
+
+If you have an array of promises of arbitrary length, you can use `await.all()` to merge them into a single promise.
+
+```javascript
+// &#x27;proms&#x27; is an array of await promises
+// that have already been created
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.await.await" id="apidoc.module.await.await">module await.await</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.await.await.await" id="apidoc.element.await.await.await">
+        function <span class="apidocSignatureSpan">await.</span>await
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">await = function (){
+  var prom = new Promise();
+  prom._buildState.apply(prom, arguments);
+  return prom;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.await.await.all" id="apidoc.element.await.await.all">
+        function <span class="apidocSignatureSpan">await.await.</span>all
+        <span class="apidocSignatureSpan">(list)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">all = function (list) {
+  if (!list || list.length === 0) {
+    return _await(&#x27;length&#x27;).keep(&#x27;length&#x27;,0);
+  }
+  var keys = list.map(function(prom, idx){
+    return idx;
+  });
+  keys.push(&#x27;length&#x27;);
+  return _await.apply(this, keys).run(function(allProm){
+    allProm.keep(&#x27;length&#x27;, list.length);
+    list.forEach(function(prom, idx){
+      prom.onfail(allProm.failer());
+      prom.onkeep(function(got){
+        allProm.keep(idx, got);
+      });
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+p3.onkeep(function(got){
+  // do something with got.m1
+  // do something with got.m2
+})
+```
+
+## `await.<span class="apidocCodeKeywordSpan">all</span>(list)`
+
+If you have an array of promises of arbitrary length, you can use `await.all()` to merge them into a single promise.
+
+```javascript
+// &#x27;proms&#x27; is an array of await promises
+// that have already been created
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.await.await.prototype" id="apidoc.module.await.await.prototype">module await.await.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.await.await.prototype._buildState" id="apidoc.element.await.await.prototype._buildState">
+        function <span class="apidocSignatureSpan">await.await.prototype.</span>_buildState
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_buildState = function () {
+  var items = slice.call(arguments);
+
+  // Check if already built.
+  if (this._built) {
+    throw new Error(&#x27;cannot build state twice&#x27;);
+  } else {
+    this._built = items.length &#x3e; 0;
+  }
+
+  // Populate slots.
+  items.forEach(function(item) {
+    if (item instanceof Promise) {
+      Object.keys(item._slots).forEach(function(item) { // eslint-disable-line no-shadow
+        this._slots[item] = false;
+      }, this);
+    } else {
+      this._slots[item] = false;
+    }
+  }, this);
+
+  // Having populated slots, take promises.
+  items.forEach(function(item) {
+    if (item instanceof Promise) {
+      this.take(item);
+    }
+  }, this);
+
+  Object.keys(this._slots).forEach(function(slot){
+    this._progress[slot] = 0;
+  }, this);
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.await.await.prototype._on" id="apidoc.element.await.await.prototype._on">
+        function <span class="apidocSignatureSpan">await.await.prototype.</span>_on
+        <span class="apidocSignatureSpan">(event, cb, ctx)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_on = function (event, cb, ctx){
+  if (typeof cb !== &#x27;function&#x27;) {
+    throw new Error(&#x27;No callback provided.&#x27;);
+  }
+
+  // NOTE: It&#x27;s possible for both this._success and this._failure
+  // to be true at the same time. In such cases this._success
+  // pre-empts this._failure.
+
+  if (this._success || this._failure) {
+    // timeout guarantees cb gets
+    // executed after return
+    var thisProm = this;
+    setTimeout(function(){
+      if (event === &#x27;resolve&#x27;) {
+        cb.call(ctx);
+      }
+      if (thisProm._success) {
+        if (event === &#x27;keep&#x27;) {
+          cb.call(ctx, thisProm._got);
+        }
+      } else {
+        if (event === &#x27;fail&#x27;) {
+          cb.apply(ctx, thisProm._failure);
+        }
+      }
+    },0);
+  } else {
+    this._allbacks.push({
+      callback:cb,
+      context:ctx,
+      type:event
+    });
+  }
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.await.await.prototype.catch" id="apidoc.element.await.await.prototype.catch">
+        function <span class="apidocSignatureSpan">await.await.prototype.</span>catch
+        <span class="apidocSignatureSpan">(onRejected)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">catch = function (onRejected){
+  return this.then(null, onRejected);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+&#x3c;/tr&#x3e;
+&#x3c;tr&#x3e;
+  &#x3c;td style=&#x22;white-space: nowrap;font-family: monospace;font-size:90%;&#x22;&#x3e;promise.then(onkeep, onfail, onprogress
+)&#x3c;/td&#x3e;
+  &#x3c;td&#x3e;Conforms to the signature and behavioral conventions outlined in the Promises/A+ spec.&#x3c;/td&#x3e;
+  &#x3c;td&#x3e;A new await.js promise&#x3c;/td&#x3e;
+&#x3c;/tr&#x3e;
+&#x3c;tr&#x3e;
+  &#x3c;td style=&#x22;white-space: nowrap;font-family: monospace;font-size:90%;&#x22;&#x3e;promise.<span class="apidocCodeKeywordSpan
+">catch</span>(onfail)&#x3c;/td&#x3e;
+  &#x3c;td&#x3e;Convenience method that behaves equivalent to &#x3c;code&#x3e;promise.then(null, onfail)&#x3c;/code&#x3e;.&#x3c;/
+td&#x3e;
+  &#x3c;td&#x3e;A new await.js promise&#x3c;/td&#x3e;
+&#x3c;/tr&#x3e;
+&#x3c;tr&#x3e;
+  &#x3c;td style=&#x22;white-space: nowrap;font-family: monospace;font-size:90%;&#x22;&#x3e;promise.keep(item[, data])&#x3c;/td&#
+x3e;
+  &#x3c;td&#x3e;Fulfills one of the things of this promise. &#x3c;code&#x3e;data&#x3c;/code&#x3e; is optional and if not defined
+, defaults to &#x3c;code&#x3e;null&#x3c;/code&#x3e;.&#x3c;/td&#x3e;
+  &#x3c;td&#x3e;itself&#x3c;/td&#x3e;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.await.await.prototype.fail" id="apidoc.element.await.await.prototype.fail">
+        function <span class="apidocSignatureSpan">await.await.prototype.</span>fail
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fail = function (){
+  if (!this._failure &#x26;&#x26; !this._success){
+    this._failure = slice.call(arguments);
+    this._allbacks.filter(function(obj){
+      return obj.type === &#x27;fail&#x27; || obj.type === &#x27;resolve&#x27;;
+    }).forEach(function(obj){
+      if (obj.type === &#x27;fail&#x27;) {
+        obj.callback.apply(obj.context, this._failure);
+      } else { // resolve
+        obj.callback.call(obj.context);
+      }
+    }, this);
+    // these are no longer needed, allow GC
+    this._allbacks = undefined;
+  }
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+// await this set of things
+var getThings = await(&#x27;me&#x27;,&#x27;feed&#x27;,&#x27;ready&#x27;)
+
+// fulfill &#x27;me&#x27;
+$.ajax(&#x27;/api/users/me&#x27;, {
+  success: function(data){ getThings.keep(&#x27;me&#x27;, data) },
+  error: function(err) { getThings.<span class="apidocCodeKeywordSpan">fail</span>(err) }
+})
+
+// fulfill &#x27;feed&#x27;
+$.ajax(&#x27;/api/users/me/feed&#x27;, {
+  success: function(data){ getThings.keep(&#x27;feed&#x27;, data) },
+  error: function(err) { getThings.fail(err) }
+})
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.await.await.prototype.failer" id="apidoc.element.await.await.prototype.failer">
+        function <span class="apidocSignatureSpan">await.await.prototype.</span>failer
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">failer = function (){
+  var thisProm = this;
+  return function(){
+    return Promise.prototype.fail.apply(thisProm, arguments);
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.await.await.prototype.keep" id="apidoc.element.await.await.prototype.keep">
+        function <span class="apidocSignatureSpan">await.await.prototype.</span>keep
+        <span class="apidocSignatureSpan">(name, data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">keep = function (name, data){
+  if (data === undefined) {
+    data = null;
+  }
+  if (this._got.hasOwnProperty(name)){
+    return this;
+  }
+  if (!this._slots.hasOwnProperty(name)) {
+    this._got[name] = data;
+    return this;
+  }
+  if (!this._failure &#x26;&#x26; !this._success){
+    this._progress[name] = 1;
+    this._slots[name] = true;
+    this._got[name] = data;
+    var kept = Object.keys(this._slots).every(function(item){
+      return this._slots[item];
+    }, this);
+    if (kept) {
+      this._success = true;
+      this._allbacks.filter(function(obj){
+        return obj.type === &#x27;keep&#x27; || obj.type === &#x27;resolve&#x27;;
+      }).forEach(function(obj){
+        if (obj.type === &#x27;keep&#x27;) {
+          obj.callback.call(obj.context, this._got);
+        } else { // it&#x27;s resolve
+          obj.callback.call(obj.context);
+        }
+      }, this);
+      // these are no longer needed, allow GC
+      this._allbacks = undefined;
+    }
+  }
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```javascript
+// await this set of things
+var getThings = await(&#x27;me&#x27;,&#x27;feed&#x27;,&#x27;ready&#x27;)
+
+// fulfill &#x27;me&#x27;
+$.ajax(&#x27;/api/users/me&#x27;, {
+success: function(data){ getThings.<span class="apidocCodeKeywordSpan">keep</span>(&#x27;me&#x27;, data) },
+error: function(err) { getThings.fail(err) }
+})
+
+// fulfill &#x27;feed&#x27;
+$.ajax(&#x27;/api/users/me/feed&#x27;, {
+success: function(data){ getThings.keep(&#x27;feed&#x27;, data) },
+error: function(err) { getThings.fail(err) }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.await.await.prototype.map" id="apidoc.element.await.await.prototype.map">
+        function <span class="apidocSignatureSpan">await.await.prototype.</span>map
+        <span class="apidocSignatureSpan">(map)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">map = function (map){
+  map || (map = {}); // eslint-disable-line no-unused-expressions
+  var items = [];
+  Object.keys(this._slots).forEach(function(item){
+    if (map.hasOwnProperty(item)) {
+      items.push(map[item]);
+    } else {
+      items.push(item);
+    }
+  });
+  return _await.apply(this, items).take(this, map);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+If there are name collisions, await will prefer recent values over older ones.
+To avoid collisions, you can use await&#x27;s `map()` method, which is documented in more detail later one.
+Example:
+
+```javascript
+function getFeed(name) { return await(&#x27;feed&#x27;)... }
+
+getFeed(&#x27;fez&#x27;).<span class="apidocCodeKeywordSpan">map</span>({&#x27;feed&#x27;:&#x27;fez&#x27;})
+.then(function(){
+  return getFeed(&#x27;bob&#x27;).map({&#x27;feed&#x27;:&#x27;bob&#x27;})
+})
+.then(function(){
+  return getFeed(&#x27;ned&#x27;).map({&#x27;feed&#x27;:&#x27;ned&#x27;})
+})
+.then(function(got){
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.await.await.prototype.nodify" id="apidoc.element.await.await.prototype.nodify">
+        function <span class="apidocSignatureSpan">await.await.prototype.</span>nodify
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">nodify = function (){
+  var items = slice.call(arguments);
+  var thisProm = this;
+  return function(err){
+    if (err) {
+      thisProm.fail(err);
+    } else {
+      var args = slice.call(arguments);
+      if (typeof items[0] === &#x27;function&#x27;) {
+        var cb = items[0];
+        var ctx = items[1];
+        cb.apply(ctx, args);
+      } else {
+        args.shift(); // lose the error
+        items.forEach(function(thing, idx){
+          if (thing !== null &#x26;&#x26; thing !== undefined) {
+            thisProm.keep(thing, args[idx]);
+          }
+        });
+      }
+    }
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    promise.fail(err);
+  } else {
+    promise.keep(&#x27;logData&#x27;, data);
+  }
+});
+```
+
+As a convenience, you can wrap the callback in `promise.<span class="apidocCodeKeywordSpan">nodify</span>()`, and it will wire up
+ the error handling automatically, shifting `err` off the signature for you:
+
+```javascript
+var promise = await(&#x27;logData&#x27;)
+
+fs.readFile(&#x27;/tmp/log&#x27;, promise.nodify(function(data){
+  promise.keep(&#x27;logData&#x27;, data);
+}));
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.await.await.prototype.onfail" id="apidoc.element.await.await.prototype.onfail">
+        function <span class="apidocSignatureSpan">await.await.prototype.</span>onfail
+        <span class="apidocSignatureSpan">(cb, ctx)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onfail = function (cb, ctx){
+  return this._on(&#x27;fail&#x27;, cb, ctx);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+promise.onkeep(function(got){
+  got.slotA
+  got.slotB
+  //...
+})
+
+promise.<span class="apidocCodeKeywordSpan">onfail</span>(function(err){
+  // handle error case
+})
+
+promise.onresolve(function(){
+  // promise is now either in
+  // a kept or failed state
+})
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.await.await.prototype.onkeep" id="apidoc.element.await.await.prototype.onkeep">
+        function <span class="apidocSignatureSpan">await.await.prototype.</span>onkeep
+        <span class="apidocSignatureSpan">(cb, ctx)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onkeep = function (cb, ctx){
+  return this._on(&#x27;keep&#x27;, cb, ctx);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+If called after resolve, callbacks are executed immediately.
+
+An important aspect of promises is that, whether or not a promise is resolved, your callback is always executed *after* the method
+ returns.
+This means that the semantics of your program don&#x27;t change based on the state of a promise at any given moment.
+That is, your code is effectively decoupled from the state of a promise, and you can always rely on it being an asynchronous operation
+.
+
+```javascript
+promise.<span class="apidocCodeKeywordSpan">onkeep</span>(function(got){
+got.slotA
+got.slotB
+//...
+})
+
+promise.onfail(function(err){
+// handle error case
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.await.await.prototype.onprogress" id="apidoc.element.await.await.prototype.onprogress">
+        function <span class="apidocSignatureSpan">await.await.prototype.</span>onprogress
+        <span class="apidocSignatureSpan">(cb, ctx)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onprogress = function (cb, ctx){
+  return this._on(&#x27;progress&#x27;, cb, ctx);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Progress callbacks are only called while the promise is unresolved.
+Progress callbacks are passed an object containing the current progress of each slot.
+This object also has a `getAverage()` method that returns a number for reporting the overall progress of the promise.
+This allows you to implement either a multi-progress bar, or a single progress bar.
+All progress values are numbers between 0.0 and 1.0.
+
+```javascript
+promise.<span class="apidocCodeKeywordSpan">onprogress</span>(function(prog){
+  progress.slotA // number between 0.0 and 1.0
+  progress.slotB // number between 0.0 and 1.0
+  // etc
+})
+```
+
+### The `then(onkeep, onfail, onprogress)` method
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.await.await.prototype.onresolve" id="apidoc.element.await.await.prototype.onresolve">
+        function <span class="apidocSignatureSpan">await.await.prototype.</span>onresolve
+        <span class="apidocSignatureSpan">(cb, ctx)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onresolve = function (cb, ctx){
+  return this._on(&#x27;resolve&#x27;, cb, ctx);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  //...
+})
+
+promise.onfail(function(err){
+  // handle error case
+})
+
+promise.<span class="apidocCodeKeywordSpan">onresolve</span>(function(){
+  // promise is now either in
+  // a kept or failed state
+})
+```
+
+Since these methods are chainable, the above could also be written as:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.await.await.prototype.progress" id="apidoc.element.await.await.prototype.progress">
+        function <span class="apidocSignatureSpan">await.await.prototype.</span>progress
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">progress = function (){
+  if (!this._allbacks) {
+    return this;
+  }
+  var amounts = arguments[0];
+  if (typeof arguments[0] === &#x27;string&#x27; &#x26;&#x26; typeof arguments[1] === &#x27;number&#x27;) {
+    amounts = {};
+    amounts[arguments[0]] = arguments[1];
+  }
+  Object.keys(amounts).forEach(function(name){
+    var amount = amounts[name];
+    if (this._slots[name] === undefined) {
+      return;
+    }
+    amount = parseFloat(amount) || 0;
+    amount = Math.max(Math.min(amount, 1), 0);
+    this._progress[name] = amount;
+  }, this);
+  this._allbacks.forEach(function(allback){
+    if (allback.type === &#x27;progress&#x27;) {
+      allback.callback.call(allback.context, this._progress);
+    }
+  }, this);
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+prom.fail(new Error(&#x27;Fake error!&#x27;))
+// prom is now in a failed state
+prom.onfail(function(err){
+  err.message // &#x27;Fake error!&#x27;
+})
+```
+
+### `promise.<span class="apidocCodeKeywordSpan">progress</span>(name, amount)`
+
+While the promise is unresolved, you can call this method any number of times to notify any listeners of progress.
+Calling this method after the promise is resolved is a no-op.
+`name` is a string naming the slot that has progressed.
+`amount` is a number between 0.0 and 1.0.
+Await does not enforce progressively higher amounts; it assumes you know what you&#x27;re doing in this regard.
+However, it will enforce that `amount` is a number between 0.0 and 1.0.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.await.await.prototype.run" id="apidoc.element.await.await.prototype.run">
+        function <span class="apidocSignatureSpan">await.await.prototype.</span>run
+        <span class="apidocSignatureSpan">(cb, ctx)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">run = function (cb, ctx){
+  try {
+    cb.call(ctx, this);
+  } catch(ex) {
+    this.fail(ex);
+  }
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  &#x3c;tbody&#x3e;
+&#x3c;tr&#x3e;
+  &#x3c;td style=&#x22;white-space: nowrap;font-family: monospace;font-size:90%;&#x22;&#x3e;var promise =&#x3c;br&#x3e;await(item1
+, item2, ... itemN)&#x3c;/td&#x3e;
+  &#x3c;td&#x3e;Returns a promise, pending the fulfillment of the given set of things. The &#x3c;code&#x3e;new&#x3c;/code&#x3e;
+keyword is not needed. Accepts one or more args which can be strings or other promises, which allows grouping. Order of arguments
+ is unimportant.&#x3c;/td&#x3e;
+  &#x3c;td&#x3e;promise&#x3c;/td&#x3e;
+&#x3c;/tr&#x3e;
+&#x3c;tr&#x3e;
+  &#x3c;td style=&#x22;white-space: nowrap;font-family: monospace;font-size:90%;&#x22;&#x3e;promise.<span class="apidocCodeKeywordSpan
+">run</span>(callback[, context])&#x3c;/td&#x3e;
+  &#x3c;td&#x3e;Runs &#x3c;code&#x3e;callback&#x3c;/code&#x3e; immediately (synchronously), which contains whatever promise fulfillment
+ logic you want. &#x3c;code&#x3e;callback&#x3c;/code&#x3e; is passed a reference to the promise. If defined and not null, &#x3c;
+code&#x3e;context&#x3c;/code&#x3e; will be &#x3c;code&#x3e;this&#x3c;/code&#x3e; in &#x3c;code&#x3e;callback&#x3c;/code&#x3e;. Exceptions
+ thrown by &#x3c;code&#x3e;callback&#x3c;/code&#x3e; automatically fail the promise.&#x3c;/td&#x3e;
+  &#x3c;td&#x3e;itself&#x3c;/td&#x3e;
+&#x3c;/tr&#x3e;
+&#x3c;tr&#x3e;
+  &#x3c;td style=&#x22;white-space: nowrap;font-family: monospace;font-size:90%;&#x22;&#x3e;promise.onkeep(callback[, context])&#
+x3c;/td&#x3e;
+  &#x3c;td&#x3e;Calls &#x3c;code&#x3e;callback&#x3c;/code&#x3e; when every item of the promise is fulfilled. If the promise is already
+ fulfilled, &#x3c;code&#x3e;callback&#x3c;/code&#x3e; runs immediately. &#x3c;code&#x3e;callback&#x3c;/code&#x3e; is passed a map
+ of all the things in the promise, keyed by the strings passed to &#x3c;code&#x3e;await()&#x3c;/code&#x3e;. If defined and not null
+, &#x3c;code&#x3e;context&#x3c;/code&#x3e; will be &#x3c;code&#x3e;this&#x3c;/code&#x3e; in &#x3c;code&#x3e;callback&#x3c;/code&#
+x3e;.&#x3c;/td&#x3e;
+  &#x3c;td&#x3e;itself&#x3c;/td&#x3e;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.await.await.prototype.take" id="apidoc.element.await.await.prototype.take">
+        function <span class="apidocSignatureSpan">await.await.prototype.</span>take
+        <span class="apidocSignatureSpan">(p2, map)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">take = function (p2, map){
+  if (this._success || this._failure) {
+    // do nothing
+  } else if (p2 instanceof Promise) {
+    p2.onfail(this.failer());
+    p2.onkeep(function(got){
+      var taken = {}, gotItems = Object.keys(got);
+
+      // take any direct matches first
+      gotItems.forEach(function(item){
+        if (this._slots.hasOwnProperty(item)) {
+          taken[item] = got[item];
+        }
+      }, this);
+
+      // take matches via mapping, overwrites any direct matches
+      if (map) {
+        gotItems.forEach(function(item){
+          if (map.hasOwnProperty(item) &#x26;&#x26; this._slots.hasOwnProperty(map[item])){
+            taken[map[item]] = got[item];
+          }
+        }, this);
+      }
+
+      Object.keys(taken).forEach(function(item){
+        this.keep(item, taken[item]);
+      }, this);
+    }, this);
+  } else if (p2 &#x26;&#x26; typeof p2.then === &#x27;function&#x27; &#x26;&#x26; typeof map === &#x27;string&#x27;) {
+    var name = map;
+    var thisProm = this;
+    p2.then(function(val){
+      thisProm.keep(name, val);
+    },function(err){
+      thisProm.fail(err);
+    },function(amount){
+      thisProm.progress(name, amount);
+    });
+  }
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+baz     buz
+        qux
+```
+
+What happens is that p1 can *take* p2.
+
+```
+p1.<span class="apidocCodeKeywordSpan">take</span>(p2)
+```
+
+p1 now takes p2, and if p2 fails, p1 fails.
+As you can see, p2 is a different set of things than p1.
+Here is how p2 maps to p1:
+
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.await.await.prototype.then" id="apidoc.element.await.await.prototype.then">
+        function <span class="apidocSignatureSpan">await.await.prototype.</span>then
+        <span class="apidocSignatureSpan">(onFulfilled, onRejected, onProgress)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">then = function (onFulfilled, onRejected, onProgress) {
+  if (typeof onFulfilled !== &#x27;function&#x27;) {
+    onFulfilled = defaultFulfilled;
+  }
+  if (typeof onRejected !== &#x27;function&#x27;) {
+    onRejected = defaultRejected;
+  }
+  var thisProm = this;
+  // empty promise so it can build state from a future promise
+  return _await().run(function(thenProm) {
+    thisProm
+    .onkeep(function(got) {
+      try {
+        var returnedValue = onFulfilled.call(thisProm, got);
+        fulfillWithResult(thenProm, returnedValue, got);
+      } catch(ex) {
+        thenProm.fail(ex);
+      }
+    })
+    .onfail(function(reason) {
+      try {
+        var returnedValue = onRejected.call(thisProm, reason);
+        fulfillWithResult(thenProm, returnedValue);
+      } catch(ex) {
+        thenProm.fail(ex);
+      }
+    });
+    if (typeof onProgress === &#x27;function&#x27;) {
+      thisProm.onprogress(function() {
+        try {
+          // make sure to call the prototype getAverage() in case there&#x27;s a slot named &#x22;getAverage&#x22;
+          onProgress.call(thisProm, Progress.prototype.getAverage.call(thisProm._progress));
+        } catch(ex) {}
+      });
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// fulfill &#x27;ready&#x27;
+$(document).ready(function(){
+  getThings.keep(&#x27;ready&#x27;);
+})
+
+// do stuff with the things
+getThings.<span class="apidocCodeKeywordSpan">then</span>(function(got){
+  // now you got stuff
+  got.me // json object
+  got.feed // json object
+  got.ready // null; dom has loaded
+},function(err){
+  // oops, there was an error
+});
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
